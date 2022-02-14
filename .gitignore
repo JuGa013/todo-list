@@ -56,3 +56,8 @@
 .idea
 docker/apache/logs
 !docker/apache/logs/.gitkeep
+
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###

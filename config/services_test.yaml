@@ -5,3 +5,7 @@ services:
 
     Juga\Todo\Tests\Behat\:
         resource: '../tests/Behat/*'
+
+    Juga\Todo\Tests\Services\:
+        resource: '../tests/Services/*'
+        public: true

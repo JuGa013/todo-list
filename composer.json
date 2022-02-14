@@ -30,8 +30,9 @@
     "require-dev": {
         "behat/behat": "^3.8",
         "behatch/contexts": "^3.3",
-        "friends-of-behat/symfony-extension": "^2.0",
+        "dama/doctrine-test-bundle": "^6.7",
         "friends-of-behat/mink-browserkit-driver": "^1.6",
+        "friends-of-behat/symfony-extension": "^2.0",
         "phpmetrics/phpmetrics": "^2.7",
         "phpstan/phpstan-symfony": "^0.12.6",
         "phpunit/phpunit": "^9.5",
@@ -39,6 +40,7 @@
         "symfony/css-selector": "5.4.*",
         "symfony/debug-bundle": "5.4.*",
         "symfony/maker-bundle": "^1.0",
+        "symfony/phpunit-bridge": "^6.0",
         "symfony/web-profiler-bundle": "5.4.*"
     },
     "config": {

@@ -132,7 +132,6 @@ restart-php-fpm:
 ## ------
 unit-test: ## Run phpunit
 unit-test: tests
-	$(DOCKER_PHP) "php bin/console d:m:m -n --allow-no-migration"
 	$(DOCKER_PHP) vendor/bin/simple-phpunit
 
 func-test: ## Run behat
