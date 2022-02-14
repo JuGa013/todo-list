@@ -1,0 +1,16 @@
+parameters:
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Juga\Todo\:
+    resource: '../src/'
+    exclude:
+      - '../src/DependencyInjection/'
+      - '../src/Kernel.php'
+
+  Juga\Todo\Application\Controller\:
+    resource: '../src/Application/Controller/'
+    tags: ['controller.service_arguments']

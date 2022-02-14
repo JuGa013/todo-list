@@ -1,0 +1,41 @@
+version: "3.2"
+services:
+  php-fpm:
+    build:
+      context: './docker/php/'
+      args:
+        UID: ${UID}
+        GID: ${GID}
+    volumes:
+      - './:/var/www/app:rw'
+      - '~/.cache/composer:/var/www/.composer:rw'
+    container_name: ${CONTAINER_NAME}_php-fpm
+    environment:
+      PHP_IDE_CONFIG: "serverName=app"
+      XDEBUG_CONFIG: "remote_host=192.168.64.1 remote_enable=1"
+    working_dir: /var/www/app
+    links:
+      - mysql
+  apache:
+    build:
+      context: './docker/apache/'
+    links:
+      - php-fpm
+    depends_on:
+      - php-fpm
+    ports:
+      - "${APACHE_PORT}:80"
+    volumes:
+      - './:/var/www/app:rw'
+      - './docker/apache/logs/:/var/log/apache2'
+    container_name: ${CONTAINER_NAME}_apache
+  mysql:
+    image: mysql:5.7.28
+    ports:
+      - '${MYSQL_PORT}:3306'
+    volumes:
+      - './:/var/local:rw'
+    working_dir: /var/local
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    container_name: ${CONTAINER_NAME}_mysql

@@ -1,0 +1,15 @@
+default:
+    suites:
+        default:
+            contexts:
+                - Juga\Todo\Tests\Behat\DemoContext
+
+    extensions:
+        FriendsOfBehat\SymfonyExtension:
+            kernel:
+                class: Juga\Todo\Kernel
+        Behat\MinkExtension:
+            sessions:
+                symfony:
+                    symfony: ~
+        Behatch\Extension: ~

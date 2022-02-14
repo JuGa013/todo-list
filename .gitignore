@@ -1,12 +1,3 @@
-# Cache and logs (Symfony2)
-/app/cache/*
-/app/logs/*
-!app/cache/.gitkeep
-!app/logs/.gitkeep
-
-# Email spool folder
-/app/spool/*
-
 # Cache, session files and logs (Symfony3)
 /var/cache/*
 /var/logs/*
@@ -19,10 +10,6 @@
 /var/log/*
 !var/log/.gitkeep
 
-# Parameters
-/app/config/parameters.yml
-/app/config/parameters.ini
-
 # Managed by Composer
 /app/bootstrap.php.cache
 /var/bootstrap.php.cache
@@ -32,8 +19,8 @@
 /vendor/
 
 # Assets and user uploads
-/web/bundles/
-/web/uploads/
+/public/bundles/
+/public/uploads/
 
 # PHPUnit
 /app/phpunit.xml
@@ -50,3 +37,22 @@
 
 # Embedded web-server pid file
 /.web-server-pid
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/var/
+###< symfony/framework-bundle ###
+
+###> friends-of-behat/symfony-extension ###
+/behat.yml
+###< friends-of-behat/symfony-extension ###
+
+###> phpunit/phpunit ###
+.phpunit.result.cache
+###< phpunit/phpunit ###
+.idea
+docker/apache/logs
+!docker/apache/logs/.gitkeep

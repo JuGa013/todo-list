@@ -1,0 +1,24 @@
+{
+    "includes": [
+        "src"
+    ],
+    "exclude": [
+    ],
+    "report": {
+        "html": "public/phpmetrics"
+    },
+    "groups": [
+        {
+            "name": "Application",
+            "match": "!\\\\Application\\\\!"
+        },
+        {
+            "name": "Bridge",
+            "match": "!\\\\Bridge\\\\!"
+        },
+        {
+            "name": "Domain",
+            "match": "!\\\\Domain\\\\!"
+        }
+    ]
+}
